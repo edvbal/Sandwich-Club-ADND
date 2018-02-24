@@ -20,11 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.sandwiches_listview);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                DetailActivity.start(getApplicationContext(), position);
-            }
-        });
+        listView.setOnItemClickListener((adapterView, view, position, aLong)
+                -> DetailActivity.start(getApplicationContext(), position));
     }
 }
